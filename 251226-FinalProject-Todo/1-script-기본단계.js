@@ -51,39 +51,3 @@ btn.addEventListener('click', function () {
     // 2-4  입력창을 비우기 작업. 
     input.value = ""
 })
-
-// 251226- 8일차 작업 진행. 
-
-// 순서1
-// 데이터 저장할 저장소 배열 만들기. 
-let todoData = [];
-
-// 순서2
-// 그리기 함수 정의 - 함수명은 보통 소문자 시작. 
-function render(dataArray) {
-
-  //항상 기본, 데이터를 모두 삭제하고 시작한다. 
-  // 기존 내용을 다 지우고,
-  listContainer.innerHTML = "";
-
-  //  새로 요소를 그릴 예정. 새로고침 효과.
-  // 기반이 데이터를 중심으로 한다. 그 데이터는 배열에 들어있다. 
-  //  배열과, 반복문을 같이 사용하는 함수 소개. forEach(function(){}), 이 기법사용.
-  todoData.forEach( function(todo) {
-	 listContainer.innerHTML += `
-    <li>
-	  <span>${todo.text}<span>
-	  <div>
-		<button class="edit-btn" onclick="updateTodo(${todo.id})">
-		  수정
-		</button>
-		<button class="del-btn" onclick="deleteTodo(${todo.id})">
-		  삭제
-		</button>
-	  </div>
-	</li>
-  `
-  } // forEach닫는 태그 
-  )  //render 닫는 태그 
- 
-} //render 닫는 태그 
